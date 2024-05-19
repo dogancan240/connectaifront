@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/kartcss.css" />
+  </head>
+
+  <body>
+    <div id="main-container" class="flex-c">
+      <div class="content-box flex-c">
+        <div class="preview">
+          <div class="card">
+            <div class="front">
+              <div class="title">CREDIT CARD</div>
+              <div id="chip" class="flex-c">
+                <span></span><span></span><span></span><span></span
+                ><span></span>
+              </div>
+              <div class="card-number">0000 0000 0000 0000</div>
+              <div class="card-name">Name Surname</div>
+              <div class="validity-box flex-c">
+                <span>VALID THRU</span>
+                <div class="card-validity">00/00</div>
+              </div>
+              <div class="logo flex-c">MasterCard</div>
+            </div>
+
+            <div class="back">
+              <div class="top-text"></div>
+              <div class="strip"></div>
+              <div class="box flex-c">
+                <div class="signature"></div>
+                <div class="card-cvv">000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-container">
+          <form>
+            <div class="field">
+              <label for="number">Card Number</label>
+              <input
+                type="text"
+                id="number"
+                oninput="UpdateAccountNumber(this);"
+                maxlength="19"
+              />
+            </div>
+
+            <div class="field">
+              <label for="name">Card Holder</label>
+              <input
+                type="text"
+                id="name"
+                oninput="updateCardHolder(this);"
+                maxlength="25"
+              />
+            </div>
+            <section>
+              <div class="field">
+                <label for="validity">Valid upto (MM/YY)</label>
+                <input
+                  type="text"
+                  id="validity"
+                  oninput="updateValidity(this)"
+                  maxlength="5"
+                />
+              </div>
+              <div class="field">
+                <label for="cvv">CVV</label>
+                <input
+                  type="text"
+                  id="cvv"
+                  oninput="updateCardCvv(this)"
+                  maxlength="3"
+                />
+              </div>
+            </section>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: -3%">
+      <button
+        style="background-color: #353434; color: white; margin-left: 43%"
+        onclick="NewOrder()"
+      >
+        CONFIRM ORDER
+      </button>
+
+      <a
+        style="background-color: #353434; color: #ef626a; text-decoration: none"
+        href="order.html"
+        >SEE ORDERS
+      </a>
+    </div>
+    <script src="assets/js/kartjs.js"></script>
+    <script src="assets/js/user-profile.js"></script>
+  </body>
+</html>

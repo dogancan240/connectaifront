@@ -1,0 +1,138 @@
+/* Basic CSS for layout */
+.form_div {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.container-p {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.user-info,
+.orders {
+  border-radius: 15px;
+  flex: 0 0 48%; /* Adjust the width as needed */
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.edit-profile-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn {
+  background-color: #ee626b;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 30px;
+  border-radius: 25px;
+  margin-top: -50%;
+}
+
+.btn:hover {
+  background-color: #0071f8;
+  color: #fff;
+}
+
+.profile-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-buttons .btn {
+  margin: 0 10px;
+}
+
+.container-p {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.user-info {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.user-details h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form_div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form_div label {
+  margin-bottom: 5px;
+}
+
+.form_div input[type="email"],
+.form_div input[type="tel"],
+.form_div input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form_div input[type="checkbox"] {
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: #ee626b;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #0071f8;
+}
+
+.profile-btn {
+  display: block;
+  margin: 20px auto 0;
+  width: 200px;
+}
