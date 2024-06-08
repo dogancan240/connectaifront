@@ -41,7 +41,7 @@ function submitLoginForm() {
   var password = document.getElementById("password").value;
 
   // Make POST request to API
-  fetch("https://dogancanapi-246674fda9a9.herokuapp.com/api/users/verify", {
+  fetch("https://connectaipriv.onrender.com/api/users/verify", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -147,7 +147,7 @@ function updateUser(Id, emailParam, paramPassword, phone) {
     tel: phone,
   };
   // Send the PUT request
-  fetch(`https://dogancanapi-246674fda9a9.herokuapp.com/api/users/${userId}`, {
+  fetch(`https://connectaipriv.onrender.com/api/users/${userId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -247,7 +247,7 @@ function NewaddUser(nameParam, surnameParam, emailParam, paramPassword, phone) {
   };
 
   // Send the POST request
-  return fetch("https://dogancanapi-246674fda9a9.herokuapp.com/api/users/", {
+  return fetch("https://connectaipriv.onrender.com/api/users/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -276,7 +276,7 @@ function NewaddUser(nameParam, surnameParam, emailParam, paramPassword, phone) {
 async function checkEmail(email) {
   try {
     const response = await fetch(
-      "https://dogancanapi-246674fda9a9.herokuapp.com/api/users/",
+      "https://connectaipriv.onrender.com/api/users/",
       {
         method: "GET",
         headers: {
@@ -301,7 +301,7 @@ async function checkEmail(email) {
 async function CheckPhone(phone) {
   try {
     const response = await fetch(
-      "https://dogancanapi-246674fda9a9.herokuapp.com/api/users/",
+      "https://connectaipriv.onrender.com/api/users/",
       {
         method: "GET",
         headers: {
@@ -325,7 +325,7 @@ async function CheckPhone(phone) {
 
 function fetchAndPopulateOrders() {
   $.ajax({
-    url: "https://dogancanapi-246674fda9a9.herokuapp.com/api/orders/",
+    url: "https://connectaipriv.onrender.com/api/orders/",
     method: "GET",
     success: function (data) {
       let myList = [];
@@ -405,7 +405,7 @@ function getH2Text(button) {
 
 function fetchAndPopulatePackages() {
   $.ajax({
-    url: "https://dogancanapi-246674fda9a9.herokuapp.com/api/packages/",
+    url: "https://connectaipriv.onrender.com/api/packages/",
     method: "GET",
     success: function (data) {
       let myList = [];
@@ -441,7 +441,7 @@ function fetchAndPopulatePackages() {
   });
 }
 function makePkageList() {
-  return fetch("https://dogancanapi-246674fda9a9.herokuapp.com/api/packages/", {
+  return fetch("https://connectaipriv.onrender.com/api/packages/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -528,7 +528,7 @@ function fetchNewOrder(UserData) {
 
   console.log("Sending userData:", JSON.stringify(userData)); // Debugging: log the userData
 
-  return fetch("https://dogancanapi-246674fda9a9.herokuapp.com/api/orders/", {
+  return fetch("https://connectaipriv.onrender.com/api/orders/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -568,6 +568,7 @@ function NewOrder() {
       fetchNewOrder(userData).then((success) => {
         if (success) {
           console.log("Order created successfully");
+          localStorage.removeItem("sectionTitle");
         } else {
           console.log("Failed to create order");
         }
@@ -648,7 +649,11 @@ function confirmPackage() {
     sepetList.push(packagenamee);
     localStorage.setItem("sectionTitle", JSON.stringify(sepetList));
 
-    alert(`Package confirmed with products: ${selectedProducts.join(", ")}`);
+    alert(
+      `Package confirmed with products: ${selectedProducts.join(
+        ", "
+      )} GO TO CART PAGE`
+    );
     // You can add more actions here, such as sending the data to a server
   } else {
     alert("Please select 4 products to confirm the package.");
@@ -656,7 +661,7 @@ function confirmPackage() {
 }
 
 async function createPackage(packageNAME, price, category) {
-  const url = "https://dogancanapi-246674fda9a9.herokuapp.com/api/packages";
+  const url = "https://connectaipriv.onrender.com/api/packages";
   const data = {
     name: packageNAME,
     category: category,
